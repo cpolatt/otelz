@@ -1,0 +1,5 @@
+# Login as <username> <password>
+* Click element by xpath "//span[text()='Giriş Yap']"
+* Send keys element by xpath "//input[@type='email']" text <username>
+* Send keys element by xpath "//input[@type='password']" text <password>
+* Click element by xpath "//button[@class='btn btn-info btn-lg btn-block']"
