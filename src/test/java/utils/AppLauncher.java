@@ -7,6 +7,7 @@ import org.junit.Assert;
 import org.openqa.selenium.*;
 
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.driver.Driver;
 
@@ -246,6 +247,24 @@ public class AppLauncher {
     @Step("Wait <seconds> seconds")
     public void waitBySecond(int seconds) throws InterruptedException {
         waitByMillis(seconds * 1000);
+    }
+
+    @Step("Send keys element arrow down <xpath>")
+    public void sendKeysArrowDown(String xpath) throws InterruptedException {
+        WebElement we = findElementByXpath(xpath);
+        for (int i = 0; i < 5; i++) {
+            we.sendKeys(Keys.ARROW_DOWN);
+        }
+
+    }
+
+    @Step("Scroll by visible element <xpath>")
+    public void scrolByVisibleElement(String xpath) {
+        JavascriptExecutor js = (JavascriptExecutor) Driver.webDriver;
+        WebElement element = findElementByXpath(xpath);
+
+        js.executeScript("arguments[0].scrollIntoView();", element);
+
     }
 
 }

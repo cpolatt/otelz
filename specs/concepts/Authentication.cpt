@@ -3,3 +3,6 @@
 * Send keys element by xpath "//input[@type='email']" text <username>
 * Send keys element by xpath "//input[@type='password']" text <password>
 * Click element by xpath "//button[@class='btn btn-info btn-lg btn-block']"
+* Wait "4000" ms
+* Equals by xpath "//strong[@class='menu-text ng-binding']" text "CEM POLAT"
+* Wait "2000" ms
